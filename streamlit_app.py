@@ -2,7 +2,7 @@ import streamlit as st
 from url_preprocessing import preprocessing
 import pickle
 
-st.title("Phising URL Detector")
+st.title("Phishing URL Detector")
 st.write(
     "This is a simple web application that uses a machine learning model to detect phishing URLs. Please enter a URL below to check if it is phishing or not."
 )

@@ -3,3 +3,5 @@ numpy==1.26.4
 scikit-learn==1.2.2
 ipaddress
 urllib3
+seaborn
+matplotlib
