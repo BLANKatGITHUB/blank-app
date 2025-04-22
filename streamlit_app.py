@@ -1,6 +1,7 @@
 import streamlit as st
 from url_preprocessing import preprocessing
 import pickle
+from url_graphs import extract_features_from_dataset, generate_graphs
 
 st.title("Phishing URL Detector")
 st.write(
@@ -21,7 +22,10 @@ if url:
     # Make a prediction
     prediction = model.predict(features)
 
-    if prediction[0] == 1:
+    if prediction[0] == 0:
         st.write("This URL is likely to be phishing.")
     else:
         st.write("This URL is likely to be safe.")
+
+    dataset_features = extract_features_from_dataset("dataset_phishing.csv") 
+    generate_graphs(dataset_features, features[0])
